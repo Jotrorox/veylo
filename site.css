@@ -293,14 +293,44 @@ p {
   gap: 12px
 }
 
-.lang {
-  color: var(--mute);
-  text-decoration: none;
-  font-size: .9rem
+.lang-switch {
+  display: inline-flex;
+  padding: 3px;
+  gap: 2px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface)
 }
 
-.lang:hover {
-  color: var(--ink);
-  text-decoration: underline;
-  text-underline-offset: 3px
+.lang-switch button {
+  height: 28px;
+  min-width: 36px;
+  padding-inline: 8px;
+  border: 0;
+  border-radius: 7px;
+  background: none;
+  color: var(--mute);
+  font: 600 .8rem/1 var(--font);
+  letter-spacing: .02em;
+  cursor: pointer
+}
+
+.lang-switch button:hover {
+  color: var(--ink)
+}
+
+.lang-switch button[aria-pressed="true"] {
+  background: var(--accent-soft);
+  color: var(--ink)
+}
+
+/* second document on the combined legal page */
+.doc .part {
+  margin-top: clamp(56px, 9vw, 96px);
+  padding-top: clamp(40px, 7vw, 64px);
+  border-top: 1px solid var(--line)
+}
+
+.doc section {
+  scroll-margin-top: 24px
 }
