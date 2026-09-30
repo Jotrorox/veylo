@@ -1,0 +1,289 @@
+/* Layout: one left-aligned column. Big headline, then the product itself as the hero (a board you can move cards on), then quiet plain-text sections. */
+
+/* hero */
+.hero {
+    padding-block: clamp(40px, 8vw, 88px) 40px;
+    display: grid;
+    gap: 26px;
+    max-width: 760px
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 7.2vw, 4.6rem);
+    font-weight: 560;
+    letter-spacing: -.04em;
+    line-height: 1
+}
+
+.hero p.sub {
+    font-size: clamp(1.05rem, 2.2vw, 1.25rem);
+    color: var(--mute);
+    max-width: 56ch;
+    line-height: 1.55
+}
+
+.cta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px 20px
+}
+
+.cta small {
+    color: var(--mute);
+    font-size: .92rem
+}
+
+/* demo */
+.demo {
+    margin-top: 8px
+}
+
+.frame {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    overflow: hidden
+}
+
+.bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--line);
+    font-size: .875rem;
+    font-weight: 600
+}
+
+.bar span {
+    color: var(--mute);
+    font-weight: 400
+}
+
+.cols {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    padding: 12px;
+    background: var(--bg)
+}
+
+.col {
+    background: var(--well);
+    border-radius: 12px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0
+}
+
+.ch {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 6px 6px;
+    font-size: .875rem;
+    font-weight: 600
+}
+
+.ch .n {
+    color: var(--mute);
+    font-weight: 400
+}
+
+.card {
+    all: unset;
+    box-sizing: border-box;
+    display: block;
+    cursor: pointer;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 10px 12px 11px;
+    font-size: .9rem;
+    line-height: 1.4;
+    transition: border-color .12s, transform .12s
+}
+
+.card:hover {
+    border-color: var(--mute)
+}
+
+.card:active {
+    transform: scale(.985)
+}
+
+.card:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px
+}
+
+.cid {
+    display: block;
+    color: var(--mute);
+    font-size: .75rem;
+    font-variant-numeric: tabular-nums;
+    margin-bottom: 2px
+}
+
+.ttl {
+    display: block;
+    font-weight: 500
+}
+
+.meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 8px;
+    margin-top: 9px;
+    font-size: .75rem;
+    color: var(--mute)
+}
+
+.tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    height: 20px;
+    padding-inline: 7px 8px;
+    border: 1px solid var(--line);
+    border-radius: 10px
+}
+
+.dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: hsl(var(--h) 62% 55%)
+}
+
+.sp {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-variant-numeric: tabular-nums
+}
+
+.due {
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap
+}
+
+.due.soon {
+    color: var(--warn)
+}
+
+.due.od {
+    color: var(--bad)
+}
+
+.due.dn {
+    color: var(--mute);
+    opacity: .7
+}
+
+.card.done .ttl {
+    color: var(--mute)
+}
+
+.land {
+    animation: land .38s cubic-bezier(.2, .9, .3, 1.15)
+}
+
+@keyframes land {
+    0% {
+        transform: scale(1.05) rotate(1.5deg);
+        box-shadow: var(--shadow)
+    }
+
+    100% {
+        transform: none;
+        box-shadow: 0 0 0 transparent
+    }
+}
+
+.hint {
+    padding: 12px 16px 14px;
+    color: var(--mute);
+    font-size: .875rem;
+    border-top: 1px solid var(--line)
+}
+
+/* sections */
+section {
+    padding-block: clamp(56px, 9vw, 104px) 0
+}
+
+.sec h2 {
+    font-size: clamp(1.7rem, 3.6vw, 2.4rem);
+    font-weight: 560;
+    letter-spacing: -.03em;
+    line-height: 1.1;
+    max-width: 20ch
+}
+
+.sec .lead {
+    margin-top: 14px;
+    color: var(--mute);
+    max-width: 58ch
+}
+
+.sec .lead a {
+    text-underline-offset: 3px
+}
+
+.sec .lead a:hover {
+    color: var(--ink)
+}
+
+.feat {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 34px 56px
+}
+
+.feat h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: -.01em
+}
+
+.feat p {
+    margin-top: 6px;
+    color: var(--mute);
+    font-size: 1rem;
+    max-width: 46ch
+}
+
+.end {
+    padding-block: clamp(56px, 9vw, 104px) clamp(48px, 8vw, 88px)
+}
+
+@media (max-width:760px) {
+    .cols {
+        grid-template-columns: minmax(0, 1fr)
+    }
+
+    .feat {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 26px
+    }
+}
+
+@media (prefers-reduced-motion:reduce) {
+    .land {
+        animation: none
+    }
+
+    .card {
+        transition: none
+    }
+}
