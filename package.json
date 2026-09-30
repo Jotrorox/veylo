@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "description": "Veylo, a quiet kanban app that runs in the browser.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jotrorox/veylo.git"
+  },
+  "homepage": "https://veylo.jotrorox.com",
   "scripts": {
     "start": "serve . -l tcp://0.0.0.0:${PORT:-3000} --no-clipboard"
   },
