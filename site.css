@@ -323,14 +323,3 @@ p {
   background: var(--accent-soft);
   color: var(--ink)
 }
-
-/* second document on the combined legal page */
-.doc .part {
-  margin-top: clamp(56px, 9vw, 96px);
-  padding-top: clamp(40px, 7vw, 64px);
-  border-top: 1px solid var(--line)
-}
-
-.doc section {
-  scroll-margin-top: 24px
-}
